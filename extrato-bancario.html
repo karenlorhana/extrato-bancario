@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>EXTRATO Spring Boot</title>
+
+    <link
+      th:href="@{/webjars/bootstrap/5.0.1/css/bootstrap.min.css}"
+      rel="stylesheet"
+    />
+
+    <link
+      th:href="@{/webjars/bootstrap//css/bootstrap-theme.min.css}"
+      rel="stylesheet"
+    />
+
+    <link
+      th:href="@{/webjars/font-awesome/css/font-awesome.min.css}"
+      rel="stylesheet"
+    />
+
+    <link href="/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <main>
+      <div class="container">
+        <h1>EXTRATO BANCÁRIO</h1>
+
+        <table class="table-content">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Data</th>
+              <th>Operacao</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr th:each="op: ${operacao}">
+              <td th:text="${op.idOperacao}"></td>
+              <td th:text="${op.dataHoraOperacao}"></td>
+              <td th:text="${op.tipoOperacao}"></td>
+              <td th:text="${op.valor}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+  </body>
+</html>
